@@ -53,11 +53,15 @@ module.exports = function (options) {
         console.log(`METHOD: ${reqOptions['method']}`)
         reqOptions['headers'] = { ...baseHeaders, ...headers }
         
-        if (reqOptions['method'] === 'POST' || 'PATCH' || 'PUT' || 'DELETE') { 
+        if (reqOptions['method'] === 'POST' || 
+            reqOptions['method'] === 'PATCH' ||
+            reqOptions['method'] === 'PUT' ||
+            reqOptions['method'] === 'DELETE') { 
+          
           reqOptions['body'] = isFormData ? body : JSON.stringify(body)
           reqOptions['form'] = isFormData
           reqOptions.headers['Content-Type'] = isFormData ? 'application/x-www-form-urlencoded' : 'application/json'
-          console.log(`REQUEST BODY: ${JSON.stringify(body)}`)
+          console.log(`REQUEST BODY: ${JSON.stringify(reqOptions.body)}`)
         }
 
         const url = baseUrl + path
