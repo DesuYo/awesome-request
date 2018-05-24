@@ -1,0 +1,16 @@
+{
+  "name": "awesome-request",
+  "version": "0.0.1",
+  "description": "HTTP client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Oleh <opavlov@conceptsoft.io>",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^8.3.1",
+    "xml-js": "^1.6.4"
+  }
+}
